@@ -56,3 +56,5 @@ Google will give you a 16-character password (e.g., abcd efgh ijkl mnop).
 Copy this password and paste it into the Password field in the add-on.
 
 🛡️ Note: This password is different from your normal Google password and is only used by apps like this one. Keep it private.
+
+Video Detail Process here: https://www.youtube.com/watch?v=KYTJKCf9h3k
