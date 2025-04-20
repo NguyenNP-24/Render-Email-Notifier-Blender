@@ -1,5 +1,5 @@
 # Render-Email-Notifier-Blender
-Render Email Notifier is a Blender add-on that automatically sends email notifications when a render process is completed. With this tool, you can comfortably away from keyboard, and receive emails containing render results right after the process finishes, saving you time and providing convenience in 3D content production. 
+The add-on that automatically sends email notifications when a render process is completed, and sends warning if render error. With this tool, you can comfortably away from keyboard, and receive emails containing render results right after the process finishes, saving you time and providing convenience in 3D content production.
 
 
 KEY FEATURES:
