@@ -1,0 +1,28 @@
+schema_version = "1.0.0"
+
+# Example of manifest file for a Blender extension
+# Change the values according to your extension
+id = "render_email_notifier"
+version = "1.0.0"
+name = "Render Email Notifier"
+tagline = "Auto send notification email after render done, to one or multiple recipiers"  
+maintainer = "Nguyen Phuc Nguyen"
+# Supported types: "add-on", "theme"
+type = "add-on"
+
+# Optional: link to documentation, support, source files, etc
+homepage = "https://github.com/NguyenNP-24/Skin-weight-Export-Import-Blender"
+source = "https://github.com/NguyenNP-24/Skin-weight-Export-Import-Blender"
+tracker = "https://github.com/NguyenNP-24/Skin-weight-Export-Import-Blender/issues"
+
+# Optional: Blender version that this extension supports
+blender_version_min = "4.2.0"
+# blender_version_max = "5.1.0"  # Optional: define max version if necessary
+
+# License conforming to https://spdx.org/licenses/
+license = ["SPDX:GPL-3.0-or-later"] 
+
+# Optional: platforms supported by the extension
+# platforms = ["windows-x64", "macos-arm64", "linux-x64"]
+
+tags = ["Pipeline", "Render","Tracking"]
