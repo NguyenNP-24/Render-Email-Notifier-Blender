@@ -7,7 +7,7 @@ bl_info = {
     "description": "Send mail with image preview after finish render",
     "category": "Render",
 }
-
+import bpy
 from . import notifier_core, ui_panel
 
 def register():
