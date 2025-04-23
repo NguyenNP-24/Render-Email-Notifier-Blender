@@ -1,7 +1,7 @@
 import bpy
+from . import notifier_core
 from bpy.types import Panel, Operator
 from bpy.props import StringProperty, BoolProperty, CollectionProperty, PointerProperty
-
 
 # Email checking function
 def validate_email(self, context):
@@ -40,8 +40,8 @@ class RenderMailBotProperties(bpy.types.PropertyGroup):
         description="Your email app password (for Gmail, generated from Google account settings)",
         default="",
         maxlen=256,
-        subtype='PASSWORD'
-    )
+        subtype='PASSWORD',
+)
     recipients: CollectionProperty(
         type=RecipientItem,
         name="Recipients",
@@ -56,7 +56,7 @@ class RenderMailBotProperties(bpy.types.PropertyGroup):
 
 # Main Panel
 class RenderMailBotPanel(Panel):
-    bl_label = "Render Mail Notifier Settings"
+    bl_label = "Render Email Notifier Settings"
     bl_idname = "RENDERMAILBOT_PT_main"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -70,6 +70,8 @@ class RenderMailBotPanel(Panel):
         # Email sender and password fields
         layout.prop(scene.render_mailbot, "sender")
         layout.prop(scene.render_mailbot, "password")
+        layout.label(text="For Gmail, use an App Password. Learn how:", icon='QUESTION')
+        layout.operator("wm.url_open", text="Get App Password Guide").url = "https://support.google.com/accounts/answer/185833"
 
         # Toggle for "Send Myself"
         layout.prop(scene.render_mailbot, "send_myself")
@@ -90,7 +92,7 @@ class RenderMailBotPanel(Panel):
         
         # Test email button
         row = layout.row()
-        row.operator("rendermailbot.test_email", text="Test Email")
+        row.operator("rendermailbot.test_email", text="Send Test Email")
 
 # Operators for adding and removing recipients
 class AddRecipientOperator(Operator):
@@ -140,23 +142,26 @@ class TestEmailOperator(Operator):
     bl_description = "Send a test email to check system"
     
     def execute(self, context):
-        from . import notifier_core
-        
+    
         subject = "🧪 Blender Email Notifier - Test"
-        body = """This is email test from Blender Render Email Notifier Add-on.
-        
+        body = """This is a test email from Blender Render Email Notifier Add-on.
+    
 If you receive this email, the add-on has been successfully installed and can send an email after rendering is complete.
 
 Happy rendering! 😊
+
+Contribute and propose changes at: https://github.com/NguyenNP-24/Render-Email-Notifier-Blender
 """
+
         success, msg = notifier_core.send_email(subject, body)
-        
+
         if success:
-            self.report({'INFO'}, "Test email sent successfully!")
+            self.report({'INFO'}, "Test email sent successfully!") 
         else:
             self.report({'ERROR'}, f"Error sending email: {msg}")
-            
+
         return {'FINISHED'}
+
 
 # Register and unregister classes
 classes = [
