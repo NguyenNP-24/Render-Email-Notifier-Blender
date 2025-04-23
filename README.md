@@ -14,8 +14,7 @@ Send Test Email: Verify your setup before running actual renders.
 
 Error Alerts: Get notified if the render is canceled or fails.
 
-![Render-email-notifier-preivew](https://github.com/user-attachments/assets/7332817a-8da5-4b94-a511-a9048cadfdd0)
-
+![Render-email-notifier-preivew](https://github.com/user-attachments/assets/f1a5071e-c29b-4753-b74d-c8fb238ebea2)
 
 
 📘 HOW TO USE
